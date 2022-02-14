@@ -1,0 +1,13 @@
+create table tbcliente(
+id integer not null auto_increment primary key,
+nome varchar(100),
+cpf varchar(14) unique,
+telefone varchar(15),
+email varchar(100));
+
+create table tbconta(
+numero integer primary key,
+agencia integer,
+tipo integer,
+saldo double,
+id_titular integer not null,constraint titular foreign key(id_titular) references tbcliente(id));
